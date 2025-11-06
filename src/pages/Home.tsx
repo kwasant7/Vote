@@ -130,6 +130,8 @@ const Home: React.FC = () => {
   };
 
   // Function to call Google Civic Information API
+  // Currently unused - keeping for future reference
+  /*
   const lookupDistrictsWithAPI = async (address: string) => {
     const API_KEY = import.meta.env.VITE_GOOGLE_CIVIC_API_KEY;
 
@@ -197,6 +199,7 @@ const Home: React.FC = () => {
       return null;
     }
   };
+  */
 
   // Function to lookup districts using the EXACT same API as King County's Find My District
   const lookupDistrictsWithKingCounty = async (address: string) => {
