@@ -66,6 +66,22 @@ A comprehensive, multilingual voter guide designed specifically for immigrants i
 - **Styling**: Tailwind CSS
 - **Internationalization**: i18next + react-i18next
 - **State Management**: React Context API
+- **CSV Parsing**: Papa Parse
+- **GIS Services**: King County GIS REST API, ArcGIS Geocoding Service
+
+### Open Source Libraries
+
+This project uses the following open-source libraries (all under permissive licenses):
+
+- `react` (MIT License) - UI framework
+- `react-dom` (MIT License) - React rendering
+- `react-router-dom` (MIT License) - Client-side routing
+- `typescript` (Apache-2.0 License) - Type safety
+- `vite` (MIT License) - Build tool
+- `tailwindcss` (MIT License) - Utility-first CSS
+- `i18next` (MIT License) - Internationalization framework
+- `react-i18next` (MIT License) - React bindings for i18next
+- `papaparse` (MIT License) - CSV parsing library
 
 ## Getting Started
 
@@ -146,12 +162,26 @@ The policy quiz matches users with candidates by:
 - Calculating match percentages for each candidate
 - Displaying aligned policy categories
 
-## Educational Purpose
+## Educational Purpose & Data Sources
 
-This application is designed for educational purposes to help immigrant communities understand the voting process in King County, Washington. All candidate and election information should be verified with official sources:
+This application was created for the **Congressional App Challenge** as an educational project to help immigrant communities understand the voting process in King County, Washington.
+
+### Data Sources
+
+- **Candidate Information**: Official data from King County Elections (Public Domain)
+- **District Mapping**: King County GIS Services REST API (Public Service)
+- **Geocoding**: ArcGIS World Geocoding Service (Public Service)
+
+### Disclaimer
+
+This application provides educational information only and does not endorse any candidate or political position. All candidate information is presented as provided by official sources. Users should verify all information with official election resources:
 
 - [King County Elections](https://kingcounty.gov/en/dept/elections)
 - [Washington Secretary of State](https://www.sos.wa.gov/elections/)
+
+### Originality Statement
+
+This application was designed and developed by the contestant. While it utilizes publicly available election data and open-source libraries (as listed above), all application code, design, features, and user interface are original work created specifically for this project.
 
 ## Contributing
 
@@ -164,10 +194,12 @@ This is an educational project. To improve it:
 
 ## License
 
-This project is for educational purposes. All election information should be verified with official sources.
+This project is for educational purposes. The application code is original work by the contestant. Election data is sourced from public government records. All open-source libraries are used in accordance with their respective licenses (see Technology Stack section).
 
 ## Acknowledgments
 
-- King County Elections for voter information
+- King County Elections for providing public election data
+- King County GIS Services for district mapping data
 - Washington State Secretary of State for election resources
 - Community organizations supporting immigrant voters
+- Open-source contributors for the libraries used in this project

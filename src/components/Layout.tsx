@@ -17,20 +17,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { path: '/', label: t('nav.home') },
     { path: '/get-ready', label: t('nav.getReady') },
     { path: '/compare-candidates', label: t('nav.compareCandidates') },
-    { path: '/policy-quiz', label: t('nav.policyQuiz') },
     { path: '/ballot', label: t('nav.ballot') },
-    { path: '/how-to-vote', label: t('nav.howToVote') },
+    { path: '/how-to-vote', label: t('nav.returnBallot') },
     { path: '/help', label: t('nav.help') },
   ];
 
   const languages: { code: Language; label: string }[] = [
     { code: 'en', label: t('languages.en') },
     { code: 'ko', label: t('languages.ko') },
-    { code: 'zh', label: t('languages.zh') },
     { code: 'es', label: t('languages.es') },
-    { code: 'vi', label: t('languages.vi') },
-    { code: 'ru', label: t('languages.ru') },
-    { code: 'tl', label: t('languages.tl') },
   ];
 
   const handleLanguageChange = (lang: Language) => {
@@ -65,17 +60,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </header>
 
       {/* Navigation */}
-      <nav className="bg-white shadow-md sticky top-0 z-10">
-        <div className="container mx-auto px-4">
-          <div className="flex overflow-x-auto">
+      <nav className="bg-gradient-to-r from-gray-50 to-gray-100 shadow-md sticky top-0 z-10 border-b border-gray-200">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex justify-center overflow-x-auto gap-2 scrollbar-hide">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-3 whitespace-nowrap transition-colors ${
+                className={`px-5 py-2.5 rounded-lg whitespace-nowrap transition-all font-medium text-sm ${
                   location.pathname === item.path
-                    ? 'border-b-4 border-primary-600 text-primary-700 font-semibold'
-                    : 'text-gray-600 hover:text-primary-600 hover:bg-gray-50'
+                    ? 'bg-primary-600 text-white shadow-md transform scale-105'
+                    : 'bg-white text-gray-700 hover:bg-primary-50 hover:text-primary-700 hover:shadow-md hover:scale-105 border border-gray-200'
                 }`}
               >
                 {item.label}
@@ -99,6 +94,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <p className="text-gray-300">
                 This voter guide is designed to help immigrants in King County
                 understand the voting process and make informed decisions.
+              </p>
+              <p className="text-gray-300 text-sm mt-3">
+                This is an educational project created for the Congressional App Challenge.
               </p>
             </div>
             <div>
@@ -136,8 +134,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </p>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-            <p>&copy; 2025 King County Voter Guide for Immigrants. For educational purposes.</p>
+          <div className="mt-8 pt-8 border-t border-gray-700 space-y-3">
+            <div className="text-center text-gray-400 text-sm">
+              <p className="mb-2">
+                <strong>Data Sources:</strong> Candidate information provided by King County Elections.
+                District mapping data from King County GIS Services.
+              </p>
+              <p className="mb-2">
+                <strong>Disclaimer:</strong> This application provides educational information only and does not
+                endorse any candidate or political position. All candidate information is presented as provided
+                by official sources. Users should verify information with official election resources.
+              </p>
+              <p>&copy; 2025 King County Voter Guide for Immigrants. For educational purposes.</p>
+            </div>
           </div>
         </div>
       </footer>

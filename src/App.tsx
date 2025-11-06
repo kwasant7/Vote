@@ -12,7 +12,7 @@ import HelpResources from './pages/HelpResources';
 function App() {
   return (
     <AppProvider>
-      <Router>
+      <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

@@ -26,8 +26,21 @@ interface AppProviderProps {
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [selectedElection, setSelectedElection] = useState<Election | null>(null);
-  const [userAddress, setUserAddress] = useState<UserAddress | null>(null);
+  const [userAddress, setUserAddress] = useState<UserAddress | null>(() => {
+    // Load saved address from localStorage
+    const saved = localStorage.getItem('userAddress');
+    return saved ? JSON.parse(saved) : null;
+  });
   const [language, setLanguage] = useState<Language>('en');
+
+  const handleSetUserAddress = (address: UserAddress | null) => {
+    setUserAddress(address);
+    if (address) {
+      localStorage.setItem('userAddress', JSON.stringify(address));
+    } else {
+      localStorage.removeItem('userAddress');
+    }
+  };
 
   return (
     <AppContext.Provider
@@ -35,7 +48,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
         selectedElection,
         setSelectedElection,
         userAddress,
-        setUserAddress,
+        setUserAddress: handleSetUserAddress,
         language,
         setLanguage,
       }}

@@ -7,217 +7,189 @@ const HelpResources: React.FC = () => {
 
   const faqs = [
     {
-      question: 'Am I eligible to vote?',
-      answer:
-        'To vote in Washington State, you must be a U.S. citizen, at least 18 years old by Election Day, a resident of Washington State, and not disqualified from voting due to a court order. If you are a permanent resident (green card holder), you are not yet eligible to vote.',
+      question: t('help.faq1Question'),
+      answer: t('help.faq1Answer'),
     },
     {
-      question: 'How do I register to vote?',
-      answer:
-        'You can register online at sos.wa.gov/elections/register.aspx, by mail using a voter registration form, or in person at King County Elections. You need your Washington State driver\'s license or ID number and the last 4 digits of your Social Security number.',
+      question: t('help.faq2Question'),
+      answer: t('help.faq2Answer'),
     },
     {
-      question: 'When is the voter registration deadline?',
-      answer:
-        'You can register to vote or update your registration up to 8 days before Election Day. After that, you can still register in person at a voting center through Election Day.',
+      question: t('help.faq3Question'),
+      answer: t('help.faq3Answer'),
     },
     {
-      question: 'What if I moved recently?',
-      answer:
-        'Update your voter registration with your new address as soon as possible. You can do this online, by mail, or in person. Your ballot will be mailed to your registered address.',
+      question: t('help.faq4Question'),
+      answer: t('help.faq4Answer'),
     },
     {
-      question: 'I didn\'t receive my ballot. What should I do?',
-      answer:
-        'Contact King County Elections at 206-296-VOTE (8683) or visit any voting center to request a replacement ballot. You can also check your voter registration status online to ensure your address is correct.',
+      question: t('help.faq5Question'),
+      answer: t('help.faq5Answer'),
     },
     {
-      question: 'Can I vote if I\'m a naturalized citizen?',
-      answer:
-        'Yes! Once you become a naturalized U.S. citizen, you have the right to vote. Make sure you are registered to vote in Washington State.',
+      question: t('help.faq6Question'),
+      answer: t('help.faq6Answer'),
     },
     {
-      question: 'What languages are ballots available in?',
-      answer:
-        'King County provides ballots and voter materials in English, Spanish, Chinese, Vietnamese, and Korean. You can request materials in these languages when you register or by contacting King County Elections.',
+      question: t('help.faq7Question'),
+      answer: t('help.faq7Answer'),
     },
     {
-      question: 'Can someone help me fill out my ballot?',
-      answer:
-        'Yes. You can get help from a family member, friend, or go to a voting center where staff and volunteers can assist you. At voting centers, accessible voting equipment is also available for voters with disabilities.',
+      question: t('help.faq8Question'),
+      answer: t('help.faq8Answer'),
     },
     {
-      question: 'What if I make a mistake on my ballot?',
-      answer:
-        'If you make a mistake, don\'t try to erase or cross it out. Contact King County Elections for a replacement ballot, or visit a voting center to get a new one.',
+      question: t('help.faq9Question'),
+      answer: t('help.faq9Answer'),
     },
     {
-      question: 'How do I know my vote was counted?',
-      answer:
-        'You can track your ballot online at sos.wa.gov/elections/myvote/. This system will show you when your ballot was mailed, received, and counted. If there\'s an issue with your ballot, King County Elections will contact you.',
+      question: t('help.faq10Question'),
+      answer: t('help.faq10Answer'),
     },
     {
-      question: 'Are ballot drop boxes safe?',
-      answer:
-        'Yes. All King County ballot drop boxes are secured, monitored by video surveillance, and collected daily by election staff. They are a safe and reliable way to return your ballot.',
+      question: t('help.faq11Question'),
+      answer: t('help.faq11Answer'),
     },
     {
-      question: 'What is a primary election vs. general election?',
-      answer:
-        'Primary elections (usually in August) narrow down the field of candidates. The top two vote-getters advance to the general election (in November), when the final winner is chosen. Washington uses a "top-two" primary system.',
+      question: t('help.faq12Question'),
+      answer: t('help.faq12Answer'),
     },
   ];
 
   const glossary = [
     {
-      term: 'Absentee Ballot',
-      definition:
-        'In Washington State, all voters receive mail-in ballots, which function as absentee ballots. You don\'t need to request one.',
+      term: t('help.glossary1Term'),
+      definition: t('help.glossary1Def'),
     },
     {
-      term: 'Ballot Drop Box',
-      definition:
-        'A secure, monitored box where you can deposit your completed ballot instead of mailing it.',
+      term: t('help.glossary2Term'),
+      definition: t('help.glossary2Def'),
     },
     {
-      term: 'Ballot Measure',
-      definition:
-        'A proposal (initiative, referendum, levy, or bond) that voters can approve or reject.',
+      term: t('help.glossary3Term'),
+      definition: t('help.glossary3Def'),
     },
     {
-      term: 'Candidate',
-      definition: 'A person running for an elected office.',
+      term: t('help.glossary4Term'),
+      definition: t('help.glossary4Def'),
     },
     {
-      term: 'Canvassing',
-      definition:
-        'The process of counting and verifying ballots after Election Day to certify results.',
+      term: t('help.glossary5Term'),
+      definition: t('help.glossary5Def'),
     },
     {
-      term: 'General Election',
-      definition:
-        'The final election where winners are chosen, typically held in November.',
+      term: t('help.glossary6Term'),
+      definition: t('help.glossary6Def'),
     },
     {
-      term: 'Initiative',
-      definition:
-        'A ballot measure proposed by citizens through a petition process.',
+      term: t('help.glossary7Term'),
+      definition: t('help.glossary7Def'),
     },
     {
-      term: 'Legislative District',
-      definition:
-        'A geographic area represented by state senators and representatives. Washington has 49 legislative districts.',
+      term: t('help.glossary8Term'),
+      definition: t('help.glossary8Def'),
     },
     {
-      term: 'Levy',
-      definition:
-        'A proposed tax increase that voters can approve or reject, often to fund schools or local services.',
+      term: t('help.glossary9Term'),
+      definition: t('help.glossary9Def'),
     },
     {
-      term: 'Non-partisan',
-      definition:
-        'An office or candidate without a party affiliation. Many local offices in Washington are non-partisan.',
+      term: t('help.glossary10Term'),
+      definition: t('help.glossary10Def'),
     },
     {
-      term: 'Polling Place',
-      definition:
-        'In other states, this is where you vote in person. Washington uses voting centers instead, which any voter can visit.',
+      term: t('help.glossary11Term'),
+      definition: t('help.glossary11Def'),
     },
     {
-      term: 'Primary Election',
-      definition:
-        'An election to narrow down candidates before the general election, usually held in August.',
+      term: t('help.glossary12Term'),
+      definition: t('help.glossary12Def'),
     },
     {
-      term: 'Proposition',
-      definition: 'Another term for a ballot measure.',
+      term: t('help.glossary13Term'),
+      definition: t('help.glossary13Def'),
     },
     {
-      term: 'Referendum',
-      definition:
-        'A ballot measure that asks voters to approve or reject a law passed by the legislature.',
+      term: t('help.glossary14Term'),
+      definition: t('help.glossary14Def'),
     },
     {
-      term: 'Special Election',
-      definition:
-        'An election held outside the regular election schedule, often for a specific purpose or to fill a vacancy.',
+      term: t('help.glossary15Term'),
+      definition: t('help.glossary15Def'),
     },
     {
-      term: 'Top-Two Primary',
-      definition:
-        'Washington\'s primary system where the top two vote-getters advance to the general election, regardless of party.',
+      term: t('help.glossary16Term'),
+      definition: t('help.glossary16Def'),
     },
     {
-      term: 'Voter Registration',
-      definition:
-        'The process of officially signing up to vote. You must be registered to receive a ballot.',
+      term: t('help.glossary17Term'),
+      definition: t('help.glossary17Def'),
     },
     {
-      term: 'Voting Center',
-      definition:
-        'A location where you can drop off your ballot, register to vote, get help, or vote using accessible equipment.',
+      term: t('help.glossary18Term'),
+      definition: t('help.glossary18Def'),
     },
   ];
 
   const officialResources = [
     {
-      name: 'King County Elections',
+      name: t('help.resource1Name'),
       url: 'https://kingcounty.gov/en/dept/elections',
-      description: 'Official King County election information and services',
+      description: t('help.resource1Desc'),
     },
     {
-      name: 'Washington Secretary of State - Elections',
+      name: t('help.resource2Name'),
       url: 'https://www.sos.wa.gov/elections/',
-      description: 'Statewide election information and voter registration',
+      description: t('help.resource2Desc'),
     },
     {
-      name: 'MyVote - Track Your Ballot',
+      name: t('help.resource3Name'),
       url: 'https://www.sos.wa.gov/elections/myvote/',
-      description: 'Check registration status and track your ballot',
+      description: t('help.resource3Desc'),
     },
     {
-      name: 'King County Voters\' Pamphlet',
+      name: t('help.resource4Name'),
       url: 'https://kingcounty.gov/en/dept/elections/how-to-vote/voters-pamphlet',
-      description: 'Detailed information about candidates and measures',
+      description: t('help.resource4Desc'),
     },
     {
-      name: 'Ballot Drop Box Locations',
+      name: t('help.resource5Name'),
       url: 'https://kingcounty.gov/en/dept/elections/how-to-vote/ballot-drop-boxes',
-      description: 'Find the nearest ballot drop box',
+      description: t('help.resource5Desc'),
     },
     {
-      name: 'Register to Vote Online',
+      name: t('help.resource6Name'),
       url: 'https://www.sos.wa.gov/elections/register.aspx',
-      description: 'Register or update your voter registration',
+      description: t('help.resource6Desc'),
     },
   ];
 
   const communityOrganizations = [
     {
       name: 'OneAmerica',
-      description: 'Immigrant rights organization with voter engagement programs',
+      description: t('help.org1Desc'),
       phone: '206-587-4009',
       website: 'https://weareoneamerica.org',
     },
     {
       name: 'Asian Pacific Islander Coalition (APIC)',
-      description: 'Civic engagement for Asian American and Pacific Islander communities',
+      description: t('help.org2Desc'),
       website: 'https://apicwa.org',
     },
     {
       name: 'Washington Coalition for Language Access',
-      description: 'Ensuring language access in voting and civic participation',
+      description: t('help.org3Desc'),
       website: 'https://example.org',
     },
     {
       name: 'League of Women Voters of Seattle-King County',
-      description: 'Nonpartisan voter education and advocacy',
+      description: t('help.org4Desc'),
       phone: '206-329-4848',
       website: 'https://lwvskc.org',
     },
     {
       name: 'King County Library System',
-      description: 'Voter registration assistance and election information at libraries',
+      description: t('help.org5Desc'),
       website: 'https://kcls.org',
     },
   ];
@@ -226,13 +198,13 @@ const HelpResources: React.FC = () => {
     <div className="max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold text-gray-800 mb-4">{t('nav.help')}</h1>
       <p className="text-gray-600 mb-8">
-        Find answers to common questions, learn voting terminology, and access helpful resources.
+        {t('help.subtitle')}
       </p>
 
       {/* FAQ Section */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          Frequently Asked Questions (FAQ)
+          {t('help.faqTitle')}
         </h2>
         <div className="space-y-3">
           {faqs.map((faq, index) => (
@@ -270,7 +242,7 @@ const HelpResources: React.FC = () => {
 
       {/* Voting Glossary */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Voting Glossary</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">{t('help.glossaryTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {glossary.map((item, index) => (
             <div key={index} className="border-l-4 border-primary-600 pl-4 py-2">
@@ -283,7 +255,7 @@ const HelpResources: React.FC = () => {
 
       {/* Official Resources */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Official Resources & Links</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">{t('help.officialResourcesTitle')}</h2>
         <div className="space-y-4">
           {officialResources.map((resource, index) => (
             <div key={index} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
@@ -295,7 +267,7 @@ const HelpResources: React.FC = () => {
                 rel="noopener noreferrer"
                 className="text-primary-600 hover:underline font-semibold"
               >
-                Visit Website →
+                {t('help.visitWebsite')}
               </a>
             </div>
           ))}
@@ -304,10 +276,10 @@ const HelpResources: React.FC = () => {
 
       {/* Contact Information */}
       <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-lg shadow-md p-6 text-white mb-8">
-        <h2 className="text-2xl font-bold mb-4">Contact King County Elections</h2>
+        <h2 className="text-2xl font-bold mb-4">{t('help.contactTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <h3 className="font-semibold mb-2">Address</h3>
+            <h3 className="font-semibold mb-2">{t('help.addressLabel')}</h3>
             <p>
               King County Elections<br />
               919 SW Grady Way<br />
@@ -315,19 +287,19 @@ const HelpResources: React.FC = () => {
             </p>
           </div>
           <div>
-            <h3 className="font-semibold mb-2">Contact</h3>
+            <h3 className="font-semibold mb-2">{t('help.contactLabel')}</h3>
             <p>
-              Phone: 206-296-VOTE (8683)<br />
+              {t('help.phone')}: 206-296-VOTE (8683)<br />
               TTY: 1-800-833-6388<br />
               Email: elections@kingcounty.gov
             </p>
           </div>
         </div>
         <div className="mt-4 pt-4 border-t border-white border-opacity-30">
-          <h3 className="font-semibold mb-2">Hours</h3>
-          <p>Monday - Friday: 8:30 AM - 4:30 PM</p>
+          <h3 className="font-semibold mb-2">{t('help.hoursLabel')}</h3>
+          <p>{t('help.hoursText')}</p>
           <p className="text-sm mt-2 opacity-90">
-            Extended hours before and on Election Day
+            {t('help.extendedHours')}
           </p>
         </div>
       </div>
@@ -335,11 +307,10 @@ const HelpResources: React.FC = () => {
       {/* Community Organizations */}
       <div className="bg-white rounded-lg shadow-md p-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          Community Organizations
+          {t('help.communityOrgsTitle')}
         </h2>
         <p className="text-gray-600 mb-4">
-          These organizations provide voter education, language assistance, and support for
-          immigrant communities.
+          {t('help.communityOrgsDesc')}
         </p>
         <div className="space-y-4">
           {communityOrganizations.map((org, index) => (
@@ -349,7 +320,7 @@ const HelpResources: React.FC = () => {
               <div className="flex flex-wrap gap-4 text-sm">
                 {org.phone && (
                   <span className="text-gray-600">
-                    <strong>Phone:</strong> {org.phone}
+                    <strong>{t('help.phone')}:</strong> {org.phone}
                   </span>
                 )}
                 {org.website && (
@@ -359,7 +330,7 @@ const HelpResources: React.FC = () => {
                     rel="noopener noreferrer"
                     className="text-primary-600 hover:underline font-semibold"
                   >
-                    Visit Website →
+                    {t('help.visitWebsite')}
                   </a>
                 )}
               </div>

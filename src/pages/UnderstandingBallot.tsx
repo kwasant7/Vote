@@ -9,33 +9,33 @@ const UnderstandingBallot: React.FC = () => {
 
   const ballotItemsByLevel = [
     {
-      level: 'State',
-      description: 'Legislative District offices',
+      level: t('ballot.stateLevel'),
+      description: t('ballot.stateLevelDesc'),
       items: candidates.filter((c) => c.level === 'state'),
     },
     {
-      level: 'County',
-      description: 'King County offices',
+      level: t('ballot.countyLevel'),
+      description: t('ballot.countyLevelDesc'),
       items: candidates.filter((c) => c.level === 'county'),
     },
     {
-      level: 'City',
-      description: 'Municipal offices',
+      level: t('ballot.cityLevel'),
+      description: t('ballot.cityLevelDesc'),
       items: candidates.filter((c) => c.level === 'city'),
     },
     {
-      level: 'Port',
-      description: 'Port of Seattle',
+      level: t('ballot.portLevel'),
+      description: t('ballot.portLevelDesc'),
       items: candidates.filter((c) => c.level === 'port'),
     },
     {
-      level: 'School District',
-      description: 'School Board',
+      level: t('ballot.schoolLevel'),
+      description: t('ballot.schoolLevelDesc'),
       items: candidates.filter((c) => c.level === 'school'),
     },
     {
-      level: 'Special Districts',
-      description: 'Fire, Water, and other districts',
+      level: t('ballot.specialLevel'),
+      description: t('ballot.specialLevelDesc'),
       items: candidates.filter((c) => c.level === 'special'),
     },
   ];
@@ -44,17 +44,16 @@ const UnderstandingBallot: React.FC = () => {
     <div className="max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold text-gray-800 mb-4">{t('nav.ballot')}</h1>
       <p className="text-gray-600 mb-8">
-        Your personalized sample ballot based on your address and selected election.
+        {t('ballot.subtitle')}
       </p>
 
       {!userAddress && (
         <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
           <p className="text-yellow-800">
-            <strong>Please enter your address</strong> on the{' '}
+            <strong>{t('ballot.enterAddressPrompt')}</strong>{' '}
             <a href="/" className="underline font-semibold">
-              Home page
-            </a>{' '}
-            to see your personalized ballot.
+              {t('ballot.enterAddressLink')}
+            </a>
           </p>
         </div>
       )}
@@ -62,12 +61,12 @@ const UnderstandingBallot: React.FC = () => {
       {userAddress && (
         <div className="bg-primary-50 border-l-4 border-primary-600 p-4 mb-6">
           <p className="text-primary-800">
-            <strong>Your Address:</strong> {userAddress.street}, {userAddress.city},{' '}
+            <strong>{t('ballot.yourAddress')}:</strong> {userAddress.street}, {userAddress.city},{' '}
             {userAddress.state} {userAddress.zipCode}
           </p>
           {userAddress.legislativeDistrict && (
             <p className="text-primary-800 mt-1">
-              <strong>Legislative District:</strong> {userAddress.legislativeDistrict}
+              <strong>{t('ballot.legislativeDistrict')}:</strong> {userAddress.legislativeDistrict}
             </p>
           )}
         </div>
@@ -78,16 +77,16 @@ const UnderstandingBallot: React.FC = () => {
           <h2 className="text-2xl font-bold text-gray-800 mb-2">
             {selectedElection.name}
           </h2>
-          <p className="text-gray-600">Election Date: {selectedElection.date}</p>
+          <p className="text-gray-600">{t('ballot.electionDate')}: {selectedElection.date}</p>
         </div>
       )}
 
       {/* Sample Ballot */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-800">Your Sample Ballot</h2>
+          <h2 className="text-2xl font-bold text-gray-800">{t('ballot.sampleBallot')}</h2>
           <button className="bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700 transition-colors">
-            Download PDF
+            {t('ballot.downloadPdf')}
           </button>
         </div>
 
@@ -126,7 +125,7 @@ const UnderstandingBallot: React.FC = () => {
                   </div>
                 ) : (
                   <p className="text-gray-500 italic">
-                    No items in this category for your ballot.
+                    {t('ballot.noItems')}
                   </p>
                 )}
               </div>
@@ -137,7 +136,7 @@ const UnderstandingBallot: React.FC = () => {
 
       {/* How to Read Your Ballot */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">How to Read Your Ballot</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">{t('ballot.howToReadTitle')}</h2>
         <div className="prose max-w-none">
           <div className="space-y-4">
             <div className="flex items-start gap-4">
@@ -146,12 +145,10 @@ const UnderstandingBallot: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">
-                  Ballot Structure
+                  {t('ballot.step1Title')}
                 </h3>
                 <p className="text-gray-700">
-                  Your ballot is organized from highest to lowest level: State, County, City,
-                  and local districts. Each section contains races and measures relevant to
-                  your address.
+                  {t('ballot.step1Desc')}
                 </p>
               </div>
             </div>
@@ -162,11 +159,10 @@ const UnderstandingBallot: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">
-                  Candidate Information
+                  {t('ballot.step2Title')}
                 </h3>
                 <p className="text-gray-700">
-                  Each candidate listing includes their name, party (if applicable), and a
-                  brief statement. You can research candidates further using this guide.
+                  {t('ballot.step2Desc')}
                 </p>
               </div>
             </div>
@@ -177,11 +173,10 @@ const UnderstandingBallot: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">
-                  Marking Your Ballot
+                  {t('ballot.step3Title')}
                 </h3>
                 <p className="text-gray-700">
-                  Use a black or blue pen to fill in the oval next to your choice. Do not use
-                  red ink, pencil, or make any other marks on the ballot.
+                  {t('ballot.step3Desc')}
                 </p>
               </div>
             </div>
@@ -192,11 +187,10 @@ const UnderstandingBallot: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-1">
-                  Ballot Measures
+                  {t('ballot.step4Title')}
                 </h3>
                 <p className="text-gray-700">
-                  In addition to candidates, your ballot may include measures (propositions,
-                  levies, bonds). Read each carefully and vote YES or NO.
+                  {t('ballot.step4Desc')}
                 </p>
               </div>
             </div>
@@ -206,24 +200,24 @@ const UnderstandingBallot: React.FC = () => {
 
       {/* Video/Webtoon Guide */}
       <div className="bg-gradient-to-r from-purple-600 to-purple-800 rounded-lg shadow-md p-6 text-white">
-        <h2 className="text-2xl font-bold mb-4">Visual Guides</h2>
+        <h2 className="text-2xl font-bold mb-4">{t('ballot.visualGuidesTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-white bg-opacity-20 rounded-lg p-4">
-            <h3 className="font-bold text-lg mb-2">Video Tutorial</h3>
+            <h3 className="font-bold text-lg mb-2">{t('ballot.videoTitle')}</h3>
             <p className="text-sm mb-3">
-              Watch a step-by-step video guide on how to complete your ballot.
+              {t('ballot.videoDesc')}
             </p>
             <button className="bg-white text-purple-700 px-4 py-2 rounded-md hover:bg-gray-100 transition-colors font-semibold">
-              Watch Video
+              {t('ballot.watchVideo')}
             </button>
           </div>
           <div className="bg-white bg-opacity-20 rounded-lg p-4">
-            <h3 className="font-bold text-lg mb-2">Webtoon Guide</h3>
+            <h3 className="font-bold text-lg mb-2">{t('ballot.webtoonTitle')}</h3>
             <p className="text-sm mb-3">
-              Read an illustrated guide explaining the voting process in multiple languages.
+              {t('ballot.webtoonDesc')}
             </p>
             <button className="bg-white text-purple-700 px-4 py-2 rounded-md hover:bg-gray-100 transition-colors font-semibold">
-              View Webtoon
+              {t('ballot.viewWebtoon')}
             </button>
           </div>
         </div>

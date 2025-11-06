@@ -11,6 +11,7 @@ export interface UserAddress {
   zipCode: string;
   state: string;
   legislativeDistrict?: string;
+  congressionalDistrict?: string;
   schoolDistrict?: string;
   countyCouncilDistrict?: string;
 }
@@ -64,4 +65,4 @@ export interface QuizResult {
   matchedPolicies: string[];
 }
 
-export type Language = 'en' | 'ko' | 'zh' | 'es' | 'vi' | 'ru' | 'tl';
+export type Language = 'en' | 'ko' | 'es';
